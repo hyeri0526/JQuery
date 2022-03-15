@@ -1,0 +1,41 @@
+<script>
+    for(var i =1; i<=10; i++)
+    {
+        if(i % 3 == 0)
+            continue; // 다음줄로 가지 않고 증감식으로 감. 그래서 3의 배수는 빼고 출력
+        document.write(i+"<br>");
+    }
+
+    var i = 1;
+    while(i<=10){
+        if(i % 3 == 0)
+        {
+            i++; // while문에서는 continue하고 싶을때, 꼭 추가해야함. do-while도 마찬가지다.
+            continue; //무조건 조건식으로 간다.
+        }
+        document.write(i + "<br>");
+        i++;
+    }
+
+    i=1;
+    do{
+        if(i % 3 == 0)
+        {
+            i++;
+            continue;//무조건 조건식으로 간다.
+        }
+        document.write(i + "<br>");
+        i++;
+    }while(i<=10); //;을 꼭 적어야한다.
+
+    loop1:
+    for(i =0; i<3; i++){
+        loop2:
+        for(j=0; j<3; j++){
+            if(i == 1 && j == 1){
+                continue loop1; 
+            }       
+        document.write('i='+i+' j='+j+'<br>');
+        }
+    }
+</script>
