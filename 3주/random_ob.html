@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset = "UTF-8">
+<title> 수학객체 </title>
+<script>
+    //1~45까지 6개의 난수 출력
+	var num = new Object();   
+    num.loopsix = function(){// (0~1사이 난수) *45 +1 한 후 소수점 버림
+        for(var i=1; i<=6; i++){   
+            num.rand= Math.floor(Math.random() * 45 + 1);     
+            document.write(num.rand, "<br>");
+        }
+    }  
+    num.loopsix();
+      
+</script>
+</head>
+<body>
+</body>
+</html>
