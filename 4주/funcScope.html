@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset = "UTF-8">
+<title> 함수스코프 </title>
+<script>
+    var a = 5; // 전역변수
+    function outerFunction(){
+        var b = 10; //지역변수
+        function innerFunction(){
+            var c = 20; //지역함수의 지역변수
+            document.write("<br>a= "+a);
+            document.write("a0= "+a+",b= "+b+"c= "+c);
+        }
+        innerFunction();
+        document.write("<br>a= "+a);
+        document.write("a1= "+a+",b= "+b); 
+    }
+    outerFunction();
+    document.write("<br>a= "+a);
+    document.write("a2= "+a);    
+</script>
+</head>
+<body>
+</body>
+</html>

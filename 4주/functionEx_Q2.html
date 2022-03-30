@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset = "UTF-8">
+<title> 객체생성자 함수 </title>
+<script>
+    function TestScore(name,kor,eng){
+        this.userName = name;
+        this.korNum = kor;
+        this.engNum = eng;
+
+        this.getTestInfo = function(){
+            document.write("이름 "+ this.userName + "<br>");
+            document.write("국어 "+ this.korNum + "<br>");
+            document.write("영어 "+ this.engNum + "<br>");
+        }
+        this.getAvg = function(){
+             return (this.engNum + this.korNum)/2;             
+        }        
+    }    
+    var kimgun = new TestScore("김군", 90, 99);
+    var ohgun = new TestScore("오군", 100, 99);
+
+    kimgun.getTestInfo();
+    document.write("평균 점수"+ kimgun.getAvg() + "<br><br>");
+    ohgun.getTestInfo();
+    document.write("평균 점수"+ ohgun.getAvg() + "<br><br>");
+</script>
+</head>
+<body>
+</body>
+</html>
