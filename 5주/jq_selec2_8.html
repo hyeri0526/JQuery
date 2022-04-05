@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 선택자 </title>  
+<script src="js/jquery.js"></script>
+<script>
+	$(function(){
+		var arr1 = [
+			{
+			"area":"서울", 
+			"name":"무대리"
+			},
+			{
+				"area":"부산", 
+				"name":"홍과장"
+			},
+			{
+				"area":"대전", 
+				"name":"박사장"
+			},
+			{
+				"area":"서울", 
+				"name":"빅마마"
+			}
+		];
+
+		console.log("arr1값: ", arr1);
+		var arr2 = $.map(arr1, function(a, b){ //arr1배열에서 area가 서울인 요소를 새로운 배열을 만들고 arr2에 저장.
+			if(a.area == "서울") {
+				return a;
+			}
+			
+			console.log("a값: ", a.area);
+			console.log("b값: ", arr1[b]);
+		});
+		console.log(arr2);
+		console.log("==== first End ====");
+
+		var arr3 = $.grep(arr1, function(a, b){ //arr1배열에서 area가 서울인 요소가 있으면 arr3에 저장하고, 아니면 false 반환.
+			if(a.area == "서울") {
+				return true;
+			} else {
+				return false;
+			}
+		});
+		console.log(arr3);
+		console.log("==== Second End ====");    
+	});
+</script>
+</head>
+<body>
+</body>
+</html>

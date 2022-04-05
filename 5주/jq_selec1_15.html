@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 선택자 </title>  
+
+<script src="js/jquery.js"></script>
+<script>
+	$(function(){
+		$(".txt1").closest("div") //클래스가 txt1중 가장 가까운 div 선택자
+		.css({
+			"border":"2px solid #f00"
+		});
+	});
+</script>
+</head>
+<body>
+	<h1 class="title">선택자</h1>
+	<div>
+		<p>테스트</p>
+		<div>
+			<p class="txt1">내용</p>
+		</div>
+	</div>
+</body>
+</html>

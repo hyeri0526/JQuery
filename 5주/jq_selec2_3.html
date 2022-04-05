@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 탐색 선택자 </title>  
+<script src="js/jquery.js"></script>
+<script>
+	$(function(){
+		$("#menu li").eq(2) //인덱스는 0부터 시작함. 즉 3번째 목록임.
+		.css({"background-color":"#ff0"});
+
+		$("#menu li:lt(2)") //보다 작은, 즉 3번째보다 작은 1~2번째 목록
+		.css({"background-color":"#0ff"});
+
+		$("#menu li:gt(2)") //보다 큰, 즉 4~번째 목록
+		.css({"background-color":"#f0f"});
+	});
+</script>
+</head>
+<body>
+	<h1>탐색 선택자</h1>
+	<ul id="menu">
+		<li>내용1</li>
+		<li>내용2</li>
+		<li>내용3</li>
+		<li>내용4</li>
+		<li>내용5</li>
+	</ul>
+</body>
+</html>
