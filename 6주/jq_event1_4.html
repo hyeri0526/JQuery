@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 이벤트 </title>  
+<script src="js/jquery.js"></script>
+<script>
+$(function( ) {
+	$(document).ready(function(){ //DOM트리 만들고 화면에 뿌리기전에
+		var h1 = $(".img1").height();
+		console.log("ready :", h1); // 높이가 0으로 나옴
+	});
+
+	$(window).load(function(){
+		var h2 = $(".img1").height();
+		console.log("load :", h2); // 높이가 30으로 나옴
+	});   
+});
+</script>
+</head>
+<body>
+	<p>
+		<img src="http://place-hold.it/300X300" class="img1">
+	</p>
+</body>
+</html>
