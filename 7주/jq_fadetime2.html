@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        var imgArr=["img/1.jpg","img/2.jpg","img/3.jpg","img/4.jpg","img/5.jpg"]; //이미지 배열
+        var cnt =0; //인덱스 변수
+        setInterval(function(){
+            cnt=(cnt>4) ? 0 : cnt; //배열 인덱스값이 2이면 0으로            
+            $("#img").attr("src",imgArr[cnt]).fadeIn(1000).fadeOut(1000); //img아이디속성 src값을 배열 인자값으로 바꿈
+            cnt++;  
+        },3000); //3초마다 반복
+    });
+</script>
+
+</head>
+<body> 
+<img id="img" src="img/1.jpg">
+</body>
+</html>
