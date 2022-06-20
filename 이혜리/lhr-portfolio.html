@@ -1,0 +1,249 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/><!--반응형으로 만들수있다-->
+	<title>hyeri's portfolio</title>
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script> <!--순서중요-->
+<style>
+		.bxslider li { list-style: none; }
+		.bxslider img { width: 300px; margin: auto;}
+		
+		#divBox2 {
+        width: 265px;
+        height: 185px;        
+        line-height: 100px;
+        text-align: center;
+		margin:0px auto;
+        }
+		.toggler { width: 400px; height: 220px; }
+		#button { padding: .5em 1em; text-decoration: none;  display: block; margin: 0px auto; }
+		#effect { width: 240px; height: 170px; padding: 0.4em; display: block; margin: 0px auto; }
+		.ui-effects-transfer { border: 2px dotted gray; }
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+  <script>
+  $( function() {    
+    function runEffect() {
+      var selectedEffect = $( "#effectTypes" ).val();
+ 
+      var options = {};
+      if ( selectedEffect === "scale" ) {
+        options = { percent: 50 };
+      } else if ( selectedEffect === "transfer" ) {
+        options = { to: "#button", className: "ui-effects-transfer" };
+      } else if ( selectedEffect === "size" ) {
+        options = { to: { width: 200, height: 60 } };
+      } 
+      
+      $( "#effect" ).effect( selectedEffect, options, 500, callback );
+    };
+ 
+    function callback() {
+      setTimeout(function() {
+        $( "#effect" ).removeAttr( "style" ).hide().fadeIn();
+      }, 1000 );
+    };
+ 
+    $( "#button" ).on( "click", function() {
+      runEffect();
+      return false;
+    });
+  } );
+  </script>
+<script>
+	$(document).ready(function () {
+		$('.bxslider').bxSlider({
+		auto: true, // 자동으로 애니메이션 시작
+		speed: 500,  // 애니메이션 속도
+		pause: 3000,  // 애니메이션 유지 시간 (1000은 1초)
+		mode: 'horizontal', // 슬라이드 모드 ('fade', 'horizontal', 'vertical' 이 있음)
+		autoControls: true, // 시작 및 중지버튼 보여짐
+		pager: true, // 페이지 표시 보여짐
+		captions: false, // 이미지 위에 텍스트를 넣을 수 있음
+		});
+	});
+</script>
+<script>
+	//자기소개 이미지 효과
+	$(function() {
+        $("#startBtn").on("click", function() {
+            $("#divBox2").fadeOut(500).delay(1000).fadeIn(2000);
+        });
+   })
+</script>
+</head>
+
+<body>
+<div data-theme="b">
+	<div data-role="page" id="home">
+		<div data-role="header" data-theme="b">		
+			
+        	<h2>Hyeri's portfolio</h2>
+		</div>
+		<div data-role="content" style="text-align:center">
+			<div class="toggler">
+				<div id="effect" class="ui-widget-content ui-corner-all">
+				  <p>
+					<img src="intro.png" >
+				  </p>
+				</div>
+			  </div>
+			  <select name="effects" id="effectTypes">
+				<option value="blind">Blind</option>
+				<option value="bounce">Bounce</option>
+				<option value="clip">Clip</option>
+				<option value="drop">Drop</option>
+				<option value="explode">Explode</option>				
+				<option value="fold">Fold</option>
+				<option value="puff">Puff</option>
+				<option value="pulsate">Pulsate</option>
+				<option value="scale">Scale</option>
+				<option value="shake">Shake</option>
+			  </select>
+			   
+			  <button id="button" class="ui-state-default ui-corner-all">Run Effect</button>
+			<ul data-role="listview" data-inset="true">
+				<li><a href="#intro">자기 소개</a></li>
+				<li><a href="#movie" data-rel="dialog">포트폴리오 영상</a></li>
+				<li><a href="#wizard3-1" data-rel="dialog">음악</a></li>
+				<li><a href="#gallery">갤러리</a></li>
+			</ul>
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="b">
+			<h1>Developer Leehyeri</h1>
+		</div>
+	</div>
+	
+	<div data-role="page" id="intro" data-theme="b">
+		<div data-role="header" data-theme="b">
+			<a href="#home" data-icon="arrow-l" data-direction="reverse">처음</a>			
+			<h1>이혜리 소개</h1>
+		</div>
+		<div data-role="content">
+				<div  style="text-align:center">
+					<button id="startBtn">START</button>
+        			<div id="divBox2"><img src="cat.jpg"></div>
+				</div>			
+			<div data-role="collapsible-set" data-theme="b" data-content-theme="e">
+				<div data-role="collapsible" data-collapsed="false">
+					<h3>프로필</h3>
+					<p>이름: 이혜리<br>
+					나이: 43세<br>
+					거주지: 부산 연제구<br>
+				</p>
+				</div>				
+				<div data-role="collapsible" >
+					<h3>성격 및 장점</h3>
+					<p>맡은 일에 대한 책임감과 목표 의식이 강함. 
+						모르는 것이라도 공부해서 실력을 발전시키려고 함.
+						정직하고 성실한 것이 최선이라고 생각함.
+						<br>일할 때 열정적인 ENTJ</p>
+				</div>
+
+				<div data-role="collapsible">
+					<h3>보유기술 및 경력</h3>
+					<p> 아두이노, python, C#, Java, HTML/CSS, Javascript, php 등 <br>
+						초등방과후 컴퓨터강사, 코딩강사 10년 이상<br>
+						정보처리기사(합격예정), 컴퓨터그래픽스운용기능사, 컴퓨터활용능력1급,
+						워드프로세서1급, SW코딩강사 외 다수</p>
+				</div>
+				
+			</div>
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="b">
+			<h1>Developer Leehyeri</h1>
+		</div>		
+	</div>
+	
+	<div data-role="page" id="movie" data-theme="b">
+		<div data-role="header" data-position="fixed" data-theme="b">
+			<a href="#home" data-icon="arrow-l" data-direction="reverse">처음</a>
+			<h1>포트폴리오 영상</h1>
+		</div>
+		<div data-role="content" >
+			<div class="ui-bar ui-bar-a">php 실습1</div><br/>
+			<li>
+				<video controls width="100%" preload="metadata">
+				<source src="php.mp4" type="video/mp4">
+				</video>
+			</li><br/>
+			<div class="ui-bar ui-bar-a">php 실습2</div><br/>
+			<li><video controls width="100%" preload="metadata">
+				<source src="php2.mp4" type="video/mp4">
+			</video></li>
+			<div class="ui-bar ui-bar-a">C# 꽃주문 예약 프로그램</div><br/>
+			<li><video controls width="100%" preload="metadata">
+				<source src="flower.mp4" type="video/mp4">
+			</video></li>
+			<div class="ui-bar ui-bar-a">html/css</div><br/>
+			<li><video controls width="100%" preload="metadata">
+				<source src="css.mp4" type="video/mp4">
+			</video></li>
+			<div class="ui-bar ui-bar-a">Photoshop</div><br/>
+			<li><video controls width="100%" preload="metadata">
+				<source src="photoshop.mp4" type="video/mp4">
+			</video></li>
+		</div>
+		<div data-role="footer" data-theme="b">
+		</div>
+	</div>
+	
+	<div data-role="page" id="wizard3-1">
+		<div data-role="header">
+			<a href="#home" data-icon="arrow-l" data-direction="reverse">처음</a>
+			<h1>데이식스 노래</h1>
+		</div>
+		<div data-role="content">
+			<div class="ui-bar ui-bar-e">행복했던 날들이었다</div><br/>
+			<audio controls width="100%" preload="metadata">
+				<source src="DAY6.mp3" type="audio/mp3">
+			</audio>	
+			<img src="3-1.jpg" alt="" width="100%">			
+		</div>
+		
+		<div data-role="footer">
+			<a href="#home"  data-direction="reverse">이전</a>
+			<a href="#wizard3-2" data-rel="dialog" data-transition="slide">다음</a>
+		</div>
+	</div>
+		
+	
+
+	<div data-role="page" id="gallery"  data-theme="b">
+		<div data-role="header" data-position="fixed"  data-theme="b">
+			<a href="#home" data-icon="arrow-l" data-direction="reverse">처음</a>
+			<h1>갤러리</h1>
+		</div>
+		<div data-role="content">
+            <ul class="bxslider">
+				<li><a href="#"><img src="4-1.jpg"  alt="" title="이미지1"></a></li>	
+				<li><a href="#"><img src="4-2.jpg"  alt="" title="이미지2"></a></li>	
+				<li><a href="#"><img src="4-3.jpg"  alt="" title="이미지3"></a></li>	
+				<li><a href="#"><img src="4-4.jpg"  alt="" title="이미지4"></a></li>	
+				<li><a href="#"><img src="4-5.jpg"  alt="" title="이미지5"></a></li>	
+				<li><a href="#"><img src="4-6.jpg"  alt="" title="이미지6"></a></li>	
+				<li><a href="#"><img src="4-7.jpg"  alt="" title="이미지7"></a></li>	
+				<li><a href="#"><img src="4-8.jpg"  alt="" title="이미지8"></a></li>	
+				<li><a href="#"><img src="4-9.jpg"  alt="" title="이미지9"></a></li>	 
+				<li><a href="#"><img src="4-10.jpg"  alt="" title="이미지10"></a></li>    
+				<li><a href="#"><img src="4-11.jpg"  alt="" title="이미지11"></a></li>   
+				
+            </ul>
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="b">
+			<h1>Developer Leehyeri</h1>
+		</div>		
+	</div>
+</div>	
+</body>
+</html>
